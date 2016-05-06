@@ -18,13 +18,13 @@
         activate();
 
         function activate() {
-            $http.get('/api/myteam/players')
-                .then(function(response) {
-                    vm.players = response;
-                })
-                .catch(function(error) {
-                    console.log(error);
-                });
+            //$http.get('/api/myteam/players')
+            //    .then(function(response) {
+            //        vm.players = response;
+            //    })
+            //    .catch(function(error) {
+            //        console.log(error);
+            //    });
         }
     }
 })();
