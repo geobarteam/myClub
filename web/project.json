@@ -48,6 +48,7 @@
       "bower install",
       "gulp clean",
       "gulp min"
-    ]
+    ],
+    "postinstall": "typings install"
   }
 }

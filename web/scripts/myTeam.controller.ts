@@ -3,17 +3,17 @@
 
     angular
         .module('myClub')
-        .controller('HomeController', myTeam);
+        .controller('MyTeamController', myTeam);
 
-    myTeam.$inject = ['$location'];
+    myTeam.$inject = ['$location']; 
 
-    function myTeam($location) {
+    function myTeam($location:any) {
         /* jshint validthis:true */
         var vm = this;
         vm.players = [];
 
 
-        vm.title = 'Home';
+        vm.title = 'myTeam';
 
         activate();
 
@@ -22,4 +22,3 @@
         }
     }
 })();
-
