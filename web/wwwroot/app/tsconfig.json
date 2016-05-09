@@ -1,4 +1,5 @@
-﻿{
+{
+  "compileOnSave": true,
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
@@ -8,14 +9,13 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
-    "outFile": "../wwwroot/app/app.js"
+    "outFile": "app.js"
   },
-  "compileOnSave": true,
   "files": [
-    "../typings/main.d.ts",
-    "app.module.ts",
-    "app.config.ts",
-    "home.controller.ts",
-    "myTeam.controller.ts"
+    "../../typings/main.d.ts",
+    "myClub.module.ts",
+    "home/home.controller.ts",
+    "myTeam/myTeam.controller.ts"
   ]
 } 
+
