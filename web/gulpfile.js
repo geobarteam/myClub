@@ -6,7 +6,8 @@ var gulp = require("gulp"),
     concat = require("gulp-concat"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify"),
-    ts = require("gulp-typescript");
+    ts = require("gulp-typescript"),
+    sourcemaps = require('gulp-sourcemaps');
 
 var webroot = "./wwwroot/";
 
@@ -51,9 +52,12 @@ gulp.task("min:css", function () {
 
 gulp.task("script", function () {
     var tsResult = tsProject.src()
-       .pipe(ts(tsProject));
+        .pipe(sourcemaps.init())
+        .pipe(ts(tsProject));
 
-    return tsResult.js.pipe(gulp.dest(paths.typescriptOut));
+    return tsResult.js
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.typescriptOut));
 });
 
 
