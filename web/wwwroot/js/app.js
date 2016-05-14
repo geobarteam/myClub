@@ -48,4 +48,3 @@ app.config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
         }
     }
 })();
-//# sourceMappingURL=app.js.map
