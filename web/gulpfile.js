@@ -3,6 +3,7 @@
 
 var gulp = require("gulp"),
     rimraf = require("rimraf"),
+    gulpRimraf = require("gulp-rimraf"),
     concat = require("gulp-concat"),
     cssmin = require("gulp-cssmin"),
     uglify = require("gulp-uglify"),
@@ -18,11 +19,13 @@ var paths = {
     minCss: webroot + "css/**/*.min.css",
     concatJsDest: webroot + "js/app.min.js",
     concatCssDest: webroot + "css/site.min.css",
-    rootApp: webroot + 'app/',
-    typescriptOut: webroot + 'js/'
+    typescriptRoot: './scripts/',
+    typescriptOut: webroot + 'js/',
+    typescriptJs:  './scripts/**/*.js',
+    concatTsFileName: 'app.js'
 };
 
-var tsProject = ts.createProject(paths.rootApp + 'tsConfig.json');
+var tsProject = ts.createProject(paths.typescriptRoot + 'tsConfig.json');
 
 gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
@@ -32,7 +35,18 @@ gulp.task("clean:css", function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
 
-gulp.task("clean", ["clean:js", "clean:css"]);
+gulp.task("clean:scriptout", function (cb) {
+    rimraf(paths.typescriptOut + paths.concatTsFileName,cb);
+});
+
+gulp.task("clean:scriptjs",
+    function() {
+        return gulp.src(paths.typescriptJs, { read: false }) 
+          .pipe(gulpRimraf());
+});
+
+
+gulp.task("clean", ["clean:js", "clean:css", "clean:scriptout", "clean:scriptjs"]);
 
 gulp.task("min:js", function () {
     return gulp.src([paths.js, "!" + paths.minJs], {
@@ -50,15 +64,18 @@ gulp.task("min:css", function () {
       .pipe(gulp.dest("."));
 });
 
+gulp.task("min", ["min:js", "min:css"]);
+
 gulp.task("script", function () {
     var tsResult = tsProject.src()
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject));
 
     return tsResult.js
+        .pipe(concat(paths.concatTsFileName))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.typescriptOut));
 });
 
 
-gulp.task("min", ["min:js", "min:css"]);
+
