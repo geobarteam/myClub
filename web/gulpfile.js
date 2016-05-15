@@ -21,7 +21,7 @@ var paths = {
     concatCssDest: webroot + "css/site.min.css",
     typescriptRoot: './scripts/',
     typescriptOut: webroot + 'js/',
-    typescriptJs:  './scripts/**/*.js',
+    typescriptJs: './scripts/**/*.js',
     concatTsFileName: 'app.js'
 };
 
@@ -36,14 +36,14 @@ gulp.task("clean:css", function (cb) {
 });
 
 gulp.task("clean:scriptout", function (cb) {
-    rimraf(paths.typescriptOut + paths.concatTsFileName,cb);
+    rimraf(paths.typescriptOut + paths.concatTsFileName, cb);
 });
 
 gulp.task("clean:scriptjs",
-    function() {
-        return gulp.src(paths.typescriptJs, { read: false }) 
+    function () {
+        return gulp.src(paths.typescriptJs, { read: false })
           .pipe(gulpRimraf());
-});
+    });
 
 
 gulp.task("clean", ["clean:js", "clean:css", "clean:scriptout", "clean:scriptjs"]);
@@ -77,5 +77,8 @@ gulp.task("script", function () {
         .pipe(gulp.dest(paths.typescriptOut));
 });
 
+gulp.task("watch:script", ['script'], function () {
+    gulp.watch(paths.typescriptRoot + '**/*.ts', ['script']);
+});
 
 
