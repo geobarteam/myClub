@@ -25,7 +25,7 @@ var paths = {
     concatTsFileName: 'app.js'
 };
 
-var tsProject = ts.createProject(paths.typescriptRoot + 'tsConfig.json');
+var tsProject = ts.createProject(paths.typescriptRoot + 'tsConfig.json'); // use tsconfig.json
 
 gulp.task("clean:js", function (cb) {
     rimraf(paths.concatJsDest, cb);
@@ -35,7 +35,7 @@ gulp.task("clean:css", function (cb) {
     rimraf(paths.concatCssDest, cb);
 });
 
-gulp.task("clean:scriptout", function (cb) {
+gulp.task("clean:tsout", function (cb) {
     rimraf(paths.typescriptOut + paths.concatTsFileName, cb);
 });
 
@@ -46,7 +46,7 @@ gulp.task("clean:scriptjs",
     });
 
 
-gulp.task("clean", ["clean:js", "clean:css", "clean:scriptout", "clean:scriptjs"]);
+gulp.task("clean", ["clean:js", "clean:css", "clean:tsout", "clean:scriptjs"]);
 
 gulp.task("min:js", function () {
     return gulp.src([paths.js, "!" + paths.minJs], {
@@ -66,10 +66,10 @@ gulp.task("min:css", function () {
 
 gulp.task("min", ["min:js", "min:css"]);
 
-gulp.task("script", function () {
+gulp.task("tsbuild", function () {
     var tsResult = tsProject.src()
         .pipe(sourcemaps.init())
-        .pipe(ts(tsProject));
+        .pipe(ts(tsProject)); // use tsconfig.json
 
     return tsResult.js
         .pipe(concat(paths.concatTsFileName))
@@ -77,8 +77,8 @@ gulp.task("script", function () {
         .pipe(gulp.dest(paths.typescriptOut));
 });
 
-gulp.task("watch:script", ['script'], function () {
-    gulp.watch(paths.typescriptRoot + '**/*.ts', ['script']);
+gulp.task("watch:tsbuild", ['tsbuild'], function () {
+    gulp.watch(paths.typescriptRoot + '**/*.ts', ['tbbuild']);
 });
 
 
