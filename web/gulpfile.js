@@ -1,4 +1,4 @@
-/// <binding BeforeBuild='clean' AfterBuild='script, min' Clean='clean' />
+/// <binding BeforeBuild='clean' AfterBuild='min, tsbuild' Clean='clean' />
 "use strict";
 
 var gulp = require("gulp"),
@@ -36,12 +36,12 @@ gulp.task("clean:css", function (cb) {
 });
 
 gulp.task("clean:tsout", function (cb) {
-    rimraf(paths.typescriptOut + paths.concatTsFileName, cb);
+    rimraf(paths.typescriptOut + paths.concatTsFileName, cb); // rimraf is used to delete a folder
 });
 
 gulp.task("clean:scriptjs",
     function () {
-        return gulp.src(paths.typescriptJs, { read: false })
+        return gulp.src(paths.typescriptJs, { read: false })  // to clean up multiple files we need to use gulp-rimraf
           .pipe(gulpRimraf());
     });
 
@@ -68,13 +68,13 @@ gulp.task("min", ["min:js", "min:css"]);
 
 gulp.task("tsbuild", function () {
     var tsResult = tsProject.src()
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init()) // needed to create sourcemaps
         .pipe(ts(tsProject)); // use tsconfig.json
 
     return tsResult.js
-        .pipe(concat(paths.concatTsFileName))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(paths.typescriptOut));
+        .pipe(concat(paths.concatTsFileName)) // concat all output files into a sings js files
+        .pipe(sourcemaps.write()) // write the sourcemap to be able to debug the ts files
+        .pipe(gulp.dest(paths.typescriptOut)); // output the result on specific path
 });
 
 gulp.task("watch:tsbuild", ['tsbuild'], function () {
