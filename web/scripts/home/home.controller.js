@@ -11,7 +11,6 @@ var MyClub;
                 this.activate();
             }
             HomeController.prototype.activate = function () {
-                this.players = ["Geoffrey Vandiest", "Hubert Lambert", "Steven Albert"];
             };
             ;
             HomeController.serviceId = "HomeController";

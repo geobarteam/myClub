@@ -5,7 +5,6 @@
         static vm: HomeController;
         scope: ng.IScope;
         location: ng.ILocationProvider;
-        players: string[];
         title: string;
 
 
@@ -19,7 +18,7 @@
         }
 
         activate(): void {
-            this.players = ["Geoffrey Vandiest", "Hubert Lambert", "Steven Albert"];
+           
         };
     }
 }

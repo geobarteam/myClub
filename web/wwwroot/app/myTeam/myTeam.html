@@ -1,3 +1,10 @@
-﻿<div>
-    <p>My Team</p>
+﻿<div ng-controller="MyTeamController as vm">
+    <h1>{{vm.title}}</h1>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row" ng-repeat="player in vm.players">
+                {{player}}
+            </div>
+        </div>
+    </div>
 </div>
