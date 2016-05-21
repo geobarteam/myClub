@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "web", "src\web\web.xproj", "{3E80D30D-F53B-4B13-B691-5A00E0E9CE54}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyClub.Web", "src\web\MyClub.Web.xproj", "{3E80D30D-F53B-4B13-B691-5A00E0E9CE54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F57B60A0-90F1-4FFD-B118-D9097D5A676F}"
 	ProjectSection(SolutionItems) = preProject
