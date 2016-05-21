@@ -2,10 +2,6 @@
   "userSecretsId": "aspnet-MyClub-b0f1dd75-689e-4aee-9456-4d3416087bcf",
 
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0-rc2-3002702",
-      "type": "platform"
-    },
     "Microsoft.ApplicationInsights.AspNetCore": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-final",
@@ -33,7 +29,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview1-final",
       "type": "build"
-    }
+    },
+    "mongocsharpdriver": "2.2.4"
   },
 
   "tools": {
@@ -62,20 +59,13 @@
         "portable-net45+win8+dnxcore50",
         "portable-net45+win8"
       ]
-    }
+    } 
   },
   "commands": {
     "web": "Microsoft.AspNetCore.Server.Kestrel"
   },
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": [
-        "dotnet5.6",
-        "dnxcore50",
-        "portable-net45+win8"
-
-      ]
-    }
+    "net461": {} 
 
   },
 
