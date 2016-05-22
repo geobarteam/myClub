@@ -1,0 +1,25 @@
+--temp-output:C:\Dev\MyClub\src\ConsoleApp1\obj\Debug\net461\
+--out:C:\Dev\MyClub\src\ConsoleApp1\bin\Debug\net461\ConsoleApp1.exe
+--define:DEBUG
+--define:TRACE
+--define:NET461
+--suppress-warning:CS1701
+--suppress-warning:CS1702
+--suppress-warning:CS1705
+--platform:x64
+--optimize:False
+--emit-entry-point:True
+--output-name:ConsoleApp1
+--file-version:1.0.0.0
+--version:1.0.0.0
+--informational-version:1.0.0
+--target-framework:.NETFramework,Version=v4.6.1
+--reference:C:\Users\gvd8\.nuget\packages\NUnit\3.2.1\lib\net45\nunit.framework.dll
+--reference:C:\Users\gvd8\.nuget\packages\NUnitLite\3.2.1\lib\net45\nunitlite.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\mscorlib.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Core.dll
+--reference:C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\Microsoft.CSharp.dll
+C:\Dev\MyClub\src\ConsoleApp1\Program.cs
+C:\Dev\MyClub\src\ConsoleApp1\SampleTest.cs
+C:\Dev\MyClub\src\ConsoleApp1\Properties\AssemblyInfo.cs

@@ -3,14 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyClub.Web", "src\web\MyClub.Web.xproj", "{3E80D30D-F53B-4B13-B691-5A00E0E9CE54}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F57B60A0-90F1-4FFD-B118-D9097D5A676F}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{775C869A-1C72-4C0F-880E-EE472B44B978}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyClub.Web", "src\MyClub.Web\MyClub.Web.xproj", "{3E80D30D-F53B-4B13-B691-5A00E0E9CE54}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MyClub.Test", "src\MyClub.Test\MyClub.Test.xproj", "{B185627A-D20E-4D3C-B83A-358142B9E6BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,11 +24,16 @@ Global
 		{3E80D30D-F53B-4B13-B691-5A00E0E9CE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E80D30D-F53B-4B13-B691-5A00E0E9CE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E80D30D-F53B-4B13-B691-5A00E0E9CE54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B185627A-D20E-4D3C-B83A-358142B9E6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B185627A-D20E-4D3C-B83A-358142B9E6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B185627A-D20E-4D3C-B83A-358142B9E6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B185627A-D20E-4D3C-B83A-358142B9E6BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3E80D30D-F53B-4B13-B691-5A00E0E9CE54} = {775C869A-1C72-4C0F-880E-EE472B44B978}
+		{B185627A-D20E-4D3C-B83A-358142B9E6BC} = {775C869A-1C72-4C0F-880E-EE472B44B978}
 	EndGlobalSection
 EndGlobal
