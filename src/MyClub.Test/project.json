@@ -15,7 +15,7 @@
   "frameworks": {
     "net461": { }
   },
-  
+
   "tooling": {
     "defaultNamespace": "MyClub.Test"
   },
